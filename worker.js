@@ -2,22 +2,32 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
 
-    if (url.hostname === "media.sliicedrive.site") {
-      return Response.redirect(
-        `https://cdn.sliicedrive.site${url.pathname}${url.search}`,
-        307
-      );
-    }
+    const redirectUrl =
+      "https://baggyrepackingrocky.com/2022576";
 
-    if (url.hostname === "cdn.sliicedrive.site") {
-      return new Response("OK", {
-        status: 200,
-        headers: {
-          "Content-Type": "text/plain; charset=UTF-8"
-        }
-      });
-    }
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movies</title>
+</head>
 
-    return new Response("Not found", { status: 404 });
+<body>
+<script>
+  setTimeout(function() {
+    window.location.href = ${JSON.stringify(redirectUrl)};
+  }, 1000);
+</script>
+</body>
+</html>`;
+
+    return new Response(html, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Cache-Control": "no-store"
+      }
+    });
   }
 };

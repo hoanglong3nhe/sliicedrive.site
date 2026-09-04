@@ -3,7 +3,7 @@ export default {
     const url = new URL(request.url);
 
     const redirectUrl =
-      "https://baggyrepackingrocky.com/2022576";
+      "https://careshonesty.com/zay5rere?key=e9f30b6f6615c431373fdf3a915b8151";
 
     const html = `<!DOCTYPE html>
 <html lang="en">
